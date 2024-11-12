@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+.text-shadow-dark{text-shadow:1px 1px 1px rgba(0,0,0,.5)}
+
+body {
+    background-image:url(assets/bg_honeycomb.png);
+    background-attachment:fixed;
+    color:#fff;
+}
+.gradient {
+    background-image:linear-gradient(to bottom,#ffd33b 0,transparent 400px);
+    position:absolute;
+    top:0;
+    z-index:-10;
+    min-height:100%;
+    min-width:100%
+}
+
+input:focus, textarea:focus { outline:none }
+a:hover { @apply text-yellow-200 }
+::selection { @apply bg-yellow-400 text-amber-900; text-shadow: none; }
+.nav-shell { @apply max-w-screen-lg m-auto mt-3 mb-12 flex flex-row justify-around sm:mb-16 }
+.nav-shell :is(a.active, a.active svg) { @apply text-white fill-white; }
+.nav-shell a svg { transition: all 150ms ease-in-out }
+.nav-shell a.active svg { @apply scale-x-[-1] }
+.nav-item { @apply font-khand font-bold text-amber-900 grid grid-rows-2 justify-items-center items-center }
+.nav-item:hover, .nav-item:hover svg { @apply text-white fill-white }
+
+/* .icon { @apply  } */
+.icon-title { text-shadow: none; }
+.icon-home, .icon-projects { width: 28px !important; }
+.icon-about { width: 30px !important; }
+
+/* Shared */
+.hero {
+    font-family: "Khand", sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+    color: #fffbeb;
+    text-align: center;
+    line-height: 60px;
+    padding: 50px;
+    @apply text-shadow-dark;
+}
+/* Bees */
+.bee-shadow {
+    position: absolute;
+    background-color: rgba(0,0,0,0.15);
+    top: 220px;
+    left: 30px;
+    width: 100px;
+    height: 30px;
+    border-radius: 50%;
+    @apply blur-sm;
+}
+.bee-shadow.bigger {
+    top: 320px;
+    width: 150px;
+}
+@keyframes bee_bounce {
+    0% { margin-top: 0; }
+    50% { margin-top: 25px; }
+    100% { margin-top: 0; }
+}
+@keyframes shadow_shrink {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(0.85); }
+    100% { transform: scaleX(1); }
+}
+
+/* Home */
+button {
+    @apply bg-amber-700 py-4 px-10 mt-5 rounded-xl text-white font-bold text-shadow-dark m-auto md:w-[90%] w-full;
+}
+button:hover {
+    @apply bg-amber-900
+}
+
+/* Contact */
+.ohhoney {
+    position: absolute;
+    overflow: hidden;
+    text-indent: -99999px;
+    white-space: nowrap;
+}
+.error-message-shell {
+    @apply absolute top-[-50px] right-[-110px] scale-x-[-1] bg-white rounded-full text-[#FB3C46] text-center p-8 shadow-2xl font-khand text-2xl font-bold;
+    opacity: 0;
+    animation: msg_bobble 1s infinite;
+    transition: all 250ms ease-in-out;
+}
+@keyframes msg_bobble {
+    25% { margin-bottom: 2px; margin-left: 4px; }
+    50% { margin-top: 5px }
+}
+.speech-bubble-bottom-piece:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-right: 24px solid #fff;
+    border-left: 12px solid transparent;
+    border-top: 12px solid #fff;
+    border-bottom: 20px solid transparent;
+    right: 100px;
+    bottom: -24px;
+}
+
+.terms p { @apply mb-[30px] }
+.terms p strong { @apply text-yellow-200 text-shadow-dark }
+.terms ul { @apply ml-[30px] }
+.terms li { @apply list-disc text-white }
+.logo-two {
+    background: linear-gradient(to bottom,#fff 0, #ffd33b 40%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#home, #pricing, #projects, #contact { min-height: calc(100vh - 696px); }
+
+/* BLOG STUFF */
+.blog { @apply font-khand text-xl text-black/75 }
+.blog p { @apply mb-6 }
+.blog h2 { @apply font-bold uppercase text-3xl text-amber-900 mb-[-4px] }
+.blog h3 { @apply text-2xl text-amber-800 mt-3 mb-[-4px] }
+.blog ul { @apply list-disc ml-4 mb-5 }
+.blog .mp4-round { @apply rounded-2xl overflow-hidden shadow-xl }
+
+/* THE HIVE */
+.hive-site-container { @apply flex flex-wrap md:flex-nowrap max-h-max pb-20 mb-10 border-b-[2px] border-dotted border-orange-900/25 last-of-type:border-b-0 w-full  }
+.hive-site-name { @apply font-khand text-5xl font-bold text-yellow-200 }
+.hive-site-link { @apply inline-block mt-[-6px] font-ubuntu text-[20px] text-orange-900 hover:underline hover:text-orange-900 }
+.hive-site-blurb { @apply mt-4 font-ubuntu text-[20px] }
+.hive-site-sub-header { @apply font-khand text-xl font-bold text-orange-700 pt-10 }
+.hive-site-tags span { @apply bg-yellow-200 py-1 px-2 text-orange-900 rounded inline-block mt-1 hover:bg-yellow-100 cursor-cell }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
